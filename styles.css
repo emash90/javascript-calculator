@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700&family=Montserrat:ital,wght@0,200;0,300;1,100&family=Roboto+Mono&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 16;
+    font-family: 'Roboto Mono', sans-serif;
+    color: #000;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    background: linear-gradient(
+        0deg, 
+        rgba(34,193,195,1) 0%, 
+        rgba(233,253,45,1) 100%);
+        display: grid;
+        place-content: center;
+}
+.container {
+    width: 90vw;
+    max-width: 500px;
+    background-color: #cecece;
+    display: grid;
+    gap: 1px;
+    grid-template-areas: 
+        "header header header header"
+        "display display display display";
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: 20px minmax(120px, auto) repeat(5, minmax(0, 70px));
+}
+.header {
+    grid-area: header;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.header >h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: normal;
+}
+.display {
+    grid-area: display;
+    display: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.container:focus-within {
+    background-color: rgba(225, 225, 225, 0.5);
+}
+.previousvalue {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.currentvalue {
+    font-size: 3rem;
+    font-weight: bolder;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-family: "Roboto Mono", sans-serif;
+}
+button {
+    display: grid;
+    place-content: center;
+    padding: 0.5rem;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+}
+button:hover, button:active {
+    background-color: rgba(225, 225, 225, 0.2);
+}
+.function {
+    background-color: rgba(235,235,235);
+}
+.equals {
+    background-color: rgba(108,177,233);
+}
+.equals:hover,
+.equals:active {
+    background-color: steelblue;
+    filter: brightness(120%);
+}
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 22px;
+    }
+    .container {
+        grid-template-rows: 35px minmax(95px, auto) repeat(5, minmax(0, 95px));
+    }
+}
